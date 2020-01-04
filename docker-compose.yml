@@ -1,0 +1,26 @@
+version: '3'
+services:
+  PostgreSQL:
+    container_name: api_container
+    image: postgres:10-alpine
+    ports:
+      - '5531:5432'
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=toor
+      - POSTGRES_DB=tool_api
+    networks:
+      - sl-net
+    volumes:
+      - ./docker-volumes/postgresql:/var/lib/postgresql
+  nest:
+    build: .
+    volumes:
+      - .:/nest
+    ports:
+      - 3000:3000
+      - 9229:9229
+    tty: true 
+
+networks:
+  sl-net:

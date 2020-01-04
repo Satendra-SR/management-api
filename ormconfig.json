@@ -1,0 +1,16 @@
+{
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5531,
+    "username": "root",
+    "password": "toor",
+    "database": "tool_api",
+    "entities": [
+        "dist/**/*.entity{.ts,.js}"
+    ],
+    "synchronize": true,
+    "cli": {
+        "migrationsDir": "src/migration",
+        "entitiesDir": "src/entities"
+    }
+}
