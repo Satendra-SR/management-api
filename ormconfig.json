@@ -5,10 +5,11 @@
     "username": "root",
     "password": "toor",
     "database": "tool_api",
-    "entities": [
-        "dist/**/*.entity{.ts,.js}"
-    ],
-    "synchronize": true,
+    "entities": ["dist/**/*.entity{.ts,.js}"],
+    "migrationsTableName": "migrations",
+    "migrations": ["dist/**/migration/*.js"],
+    "synchronize": false,
+    "logging": false,
     "cli": {
         "migrationsDir": "src/migration",
         "entitiesDir": "src/entities"
